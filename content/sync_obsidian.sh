@@ -1,39 +1,63 @@
-#!/bin/bash
 
-# Переходим в корень репозитория (там, где папка .git и папка content)
+#!/bin/bash
+set -e
+
+# Переходим в корень репозитория
 cd "$(dirname "$0")"
 
-# Добавляем абсолютно все изменения в индекс гит
+# Добавляем все изменения в индекс Git
 git add -A
 
-# Вычисляем папку с наибольшим количеством изменений внутри content/
-# 1. Смотрим только файлы, измененные в папке content/
-# 2. Исключаем папку с картинками content/src и сам скрипт синхронизации
-# 3. Если файл лежит прямо в корне content/ (например, index.md), пишем "content"
-# 4. Если лежит в подпапке (например, content/OS-NETWORK/Cisco), берем имя этой подпапки (OS-NETWORK)
-# 5. Считаем упоминания, сортируем по убыванию и берем лидера
-MAIN_DIR=$(git diff --cached --name-only | grep '^content/' | grep -vE '(content/src/|sync_obsidian\.sh)' | awk -F/ '{
-    if ($2 ~ /\.md$/ || $2 == "index.md" || $2 == "kek.md") {
-        print "content"
-    } else if ($2 != "") {
-        print $2
-    }
-}' | sort | uniq -c | sort -nr | head -n1 | awk '{print $2}')
+# Не создаём пустой коммит
+if git diff --cached --quiet; then
+    echo "Нет изменений для синхронизации."
+    exit 0
+fi
 
-# Если изменений в content/ не обнаружено (например, вы правили только конфиги самого Quartz)
+# Определяем предмет с наибольшим количеством изменённых файлов
+MAIN_DIR=$(git diff --cached --name-only |
+    grep '^content/' |
+    grep -vE '^content/src/|^content/sync_obsidian\.sh$' |
+    awk -F/ '{
+        if (NF < 3) {
+            print "content"
+        } else {
+            print $2
+        }
+    }' |
+    sort |
+    uniq -c |
+    sort -nr |
+    head -n 1 |
+    awk '{print $2}')
+
+# Если изменения касаются не заметок, используем системную категорию
 if [ -z "$MAIN_DIR" ]; then
     MAIN_DIR="quartz-system"
 fi
 
-# Получаем текущее время в формате ДД.ММ.ГГ ЧЧ:ММ
+# Получаем текущую дату и время
 CURRENT_TIME=$(date "+%d.%m.%y %H:%M")
 
-# Собираем заголовок коммита
-COMMIT_MSG="Sync: $MAIN_DIR $CURRENT_TIME"
+# Определяем день недели на русском языке
+WEEKDAY_NUMBER=$(date "+%u")
+
+case "$WEEKDAY_NUMBER" in
+    1) WEEKDAY="понедельник" ;;
+    2) WEEKDAY="вторник" ;;
+    3) WEEKDAY="среда" ;;
+    4) WEEKDAY="четверг" ;;
+    5) WEEKDAY="пятница" ;;
+    6) WEEKDAY="суббота" ;;
+    7) WEEKDAY="воскресенье" ;;
+esac
+
+# Формируем заголовок коммита
+COMMIT_MSG="Sync: $MAIN_DIR $CURRENT_TIME $WEEKDAY"
 
 echo "Отправка изменений: $COMMIT_MSG"
 
-# Фиксируем изменения и пушим в ветку master
+# Создаём коммит и отправляем его в master
 git commit -m "$COMMIT_MSG"
 git push origin master
 
