@@ -23,6 +23,7 @@ SUBJECTS=$(
             {
                 path = ($1 ~ /^[RC]/ ? $3 : $2)
 
+                if (path ~ /^\.obsidian\//) next
                 if (path !~ /^content\//) next
                 if (path ~ /^content\/src\//) next
                 if (path == "content/sync_obsidian.sh") next
@@ -51,16 +52,10 @@ elif [[ "$SUBJECT_COUNT" -eq 1 ]]; then
     SUBJECT_TITLE="${SUBJECT_ARRAY[0]}"
 elif [[ "$SUBJECT_COUNT" -eq 2 ]]; then
     SUBJECT_TITLE="${SUBJECT_ARRAY[0]} и ${SUBJECT_ARRAY[1]}"
+elif [[ "$SUBJECT_COUNT" -eq 3 ]]; then
+    SUBJECT_TITLE="${SUBJECT_ARRAY[0]}, ${SUBJECT_ARRAY[1]} и ${SUBJECT_ARRAY[2]}"
 else
-    SUBJECT_TITLE="${SUBJECT_ARRAY[0]}, ${SUBJECT_ARRAY[1]}, ${SUBJECT_ARRAY[2]}"
-    if [[ "$SUBJECT_COUNT" -gt 3 ]]; then
-        SUBJECT_TITLE="$SUBJECT_TITLE и ещё $((SUBJECT_COUNT - 3))"
-    fi
-fi
-
-# Если изменился только content/src, считаем это системными изменениями
-if [[ "$SUBJECT_COUNT" -eq 0 ]]; then
-    SUBJECT_TITLE="quartz-system"
+    SUBJECT_TITLE="${SUBJECT_ARRAY[0]}, ${SUBJECT_ARRAY[1]}, ${SUBJECT_ARRAY[2]} и ещё $((SUBJECT_COUNT - 3))"
 fi
 
 # Получаем дату, время и день недели
@@ -109,7 +104,8 @@ DESCRIPTION=$(
                 old_path = $2
                 path = ($1 ~ /^[RC]/ ? $3 : $2)
 
-                # Исключаем изображения и сам скрипт из описания изменений
+                # Исключаем служебные файлы из описания
+                if (path ~ /^\.obsidian\//) next
                 if (path ~ /^content\/src\//) next
                 if (path == "content/sync_obsidian.sh") next
 
@@ -210,17 +206,31 @@ DESCRIPTION=$(
         '
 )
 
-# Статистика изменений
-ADDED=$(printf '%s\n' "$CHANGES" |
+# Отбираем файлы, которые отображаются в описании
+VISIBLE_CHANGES=$(printf '%s\n' "$CHANGES" |
+    awk -F '\t' '
+        {
+            path = ($1 ~ /^[RC]/ ? $3 : $2)
+
+            if (path ~ /^\.obsidian\//) next
+            if (path ~ /^content\/src\//) next
+            if (path == "content/sync_obsidian.sh") next
+
+            print
+        }
+    ')
+
+# Статистика только по отображаемым файлам
+ADDED=$(printf '%s\n' "$VISIBLE_CHANGES" |
     awk -F '\t' '$1 == "A" {n++} END {print n+0}')
 
-MODIFIED=$(printf '%s\n' "$CHANGES" |
+MODIFIED=$(printf '%s\n' "$VISIBLE_CHANGES" |
     awk -F '\t' '$1 == "M" {n++} END {print n+0}')
 
-DELETED=$(printf '%s\n' "$CHANGES" |
+DELETED=$(printf '%s\n' "$VISIBLE_CHANGES" |
     awk -F '\t' '$1 == "D" {n++} END {print n+0}')
 
-RENAMED=$(printf '%s\n' "$CHANGES" |
+RENAMED=$(printf '%s\n' "$VISIBLE_CHANGES" |
     awk -F '\t' '$1 ~ /^R/ {n++} END {print n+0}')
 
 DESCRIPTION="$DESCRIPTION
@@ -237,4 +247,3 @@ echo
 # Создаём коммит и отправляем его в master
 git commit -m "$COMMIT_MSG" -m "$DESCRIPTION"
 git push origin master
-
