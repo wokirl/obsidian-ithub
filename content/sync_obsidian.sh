@@ -1,6 +1,5 @@
-
 #!/bin/bash
-set -e
+set -euo pipefail
 
 # Переходим в корень репозитория
 cd "$(dirname "$0")"
@@ -8,56 +7,119 @@ cd "$(dirname "$0")"
 # Добавляем все изменения в индекс Git
 git add -A
 
-# Не создаём пустой коммит
+# Проверяем, есть ли изменения для коммита
 if git diff --cached --quiet; then
     echo "Нет изменений для синхронизации."
     exit 0
 fi
 
-# Определяем предмет с наибольшим количеством изменённых файлов
-MAIN_DIR=$(git diff --cached --name-only |
-    grep '^content/' |
-    grep -vE '^content/src/|^content/sync_obsidian\.sh$' |
-    awk -F/ '{
-        if (NF < 3) {
-            print "content"
-        } else {
-            print $2
-        }
-    }' |
-    sort |
-    uniq -c |
-    sort -nr |
-    head -n 1 |
-    awk '{print $2}')
+# Получаем список изменённых файлов
+CHANGED_FILES=$(git diff --cached --name-only)
 
-# Если изменения касаются не заметок, используем системную категорию
-if [ -z "$MAIN_DIR" ]; then
+# Определяем предметы, в которых есть изменения.
+# Исключаем служебные файлы и content/src.
+SUBJECTS=$(
+    printf '%s\n' "$CHANGED_FILES" |
+        awk -F/ '
+            /^content\/src\// { next }
+            /^content\/sync_obsidian\.sh$/ { next }
+            /^content\// {
+                if (NF >= 3) {
+                    print $2
+                } else {
+                    print "content"
+                }
+                next
+            }
+        ' |
+        sort -u
+)
+
+# Формируем заголовок из названий предметов
+if [[ -n "$SUBJECTS" ]]; then
+    MAIN_DIR=$(printf '%s\n' "$CHANGED_FILES" |
+        awk -F/ '
+            /^content\/src\// { next }
+            /^content\/sync_obsidian\.sh$/ { next }
+            /^content\// {
+                if (NF >= 3) print $2
+                else print "content"
+            }
+        ' |
+        sort |
+        uniq -c |
+        sort -k1,1nr -k2,2 |
+        head -n 1 |
+        awk '{$1=""; sub(/^ /, ""); print}')
+
+    SUBJECT_COUNT=$(printf '%s\n' "$SUBJECTS" | wc -l | tr -d ' ')
+
+    if [[ "$SUBJECT_COUNT" -eq 1 ]]; then
+        SUBJECT_TITLE="$SUBJECTS"
+    elif [[ "$SUBJECT_COUNT" -eq 2 ]]; then
+        SUBJECT_TITLE=$(printf '%s\n' "$SUBJECTS" | paste -sd ' ' - | sed 's/ / и /')
+    else
+        SUBJECT_TITLE=$(printf '%s\n' "$SUBJECTS" | head -n 3 | paste -sd ', ' -)
+        if [[ "$SUBJECT_COUNT" -gt 3 ]]; then
+            SUBJECT_TITLE="$SUBJECT_TITLE и ещё $((SUBJECT_COUNT - 3))"
+        fi
+    fi
+else
     MAIN_DIR="quartz-system"
+    SUBJECT_TITLE="$MAIN_DIR"
 fi
 
-# Получаем текущую дату и время
+# Текущие дата и время
 CURRENT_TIME=$(date "+%d.%m.%y %H:%M")
 
-# Определяем день недели на русском языке
-WEEKDAY_NUMBER=$(date "+%u")
-
-case "$WEEKDAY_NUMBER" in
+# День недели на русском
+case "$(date "+%u")" in
     1) WEEKDAY="понедельник" ;;
     2) WEEKDAY="вторник" ;;
-    3) WEEKDAY="среда" ;;
-    4) WEEKDAY="четверг" ;;
+    3) WEEKDAY="четверг" ;;
+    4) WEEKDAY="среда" ;;
     5) WEEKDAY="пятница" ;;
     6) WEEKDAY="суббота" ;;
     7) WEEKDAY="воскресенье" ;;
 esac
 
-# Формируем заголовок коммита
-COMMIT_MSG="Sync: $MAIN_DIR $CURRENT_TIME $WEEKDAY"
+# Заголовок коммита
+COMMIT_MSG="Sync: $SUBJECT_TITLE $CURRENT_TIME $WEEKDAY"
 
-echo "Отправка изменений: $COMMIT_MSG"
+# Формируем подробное описание изменений
+DESCRIPTION="Изменения:"
 
-# Создаём коммит и отправляем его в master
-git commit -m "$COMMIT_MSG"
+ADDED=$(git diff --cached --name-status | awk '$1 == "A" {print $2}')
+MODIFIED=$(git diff --cached --name-status | awk '$1 == "M" {print $2}')
+DELETED=$(git diff --cached --name-status | awk '$1 == "D" {print $2}')
+RENAMED=$(git diff --cached --name-status | awk '$1 ~ /^R/ {print $2 " -> " $3}')
+if [[ -n "$ADDED" ]]; then
+    DESCRIPTION+=$'\n\nДобавлены:\n'
+    DESCRIPTION+=$(printf '%s\n' "$ADDED" | sed 's/^/- /')
+fi
+
+if [[ -n "$MODIFIED" ]]; then
+    DESCRIPTION+=$'\n\nИзменены:\n'
+    DESCRIPTION+=$(printf '%s\n' "$MODIFIED" | sed 's/^/- /')
+fi
+
+if [[ -n "$DELETED" ]]; then
+    DESCRIPTION+=$'\n\nУдалены:\n'
+    DESCRIPTION+=$(printf '%s\n' "$DELETED" | sed 's/^/- /')
+fi
+
+if [[ -n "$RENAMED" ]]; then
+    DESCRIPTION+=$'\n\nПереименованы:\n'
+    DESCRIPTION+=$(printf '%s\n' "$RENAMED" | sed 's/^/- /')
+fi
+
+echo
+echo "Заголовок: $COMMIT_MSG"
+echo
+echo "$DESCRIPTION"
+echo
+
+# Создаём коммит и отправляем изменения в master
+git commit -m "$COMMIT_MSG" -m "$DESCRIPTION"
 git push origin master
 
