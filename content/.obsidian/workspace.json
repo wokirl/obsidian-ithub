@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "os-network/1. OSI/index.md",
+                "file": "computer-science/2. Редактор презентаций/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "os-network/1. OSI/index.md",
+                "file": "computer-science/2. Редактор презентаций/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "os-network/1. OSI/index.md",
+                "file": "computer-science/2. Редактор презентаций/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "os-network/1. OSI/index.md",
+                "file": "computer-science/2. Редактор презентаций/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,6 +190,16 @@
   },
   "active": "058b5433a74b91c7",
   "lastOpenFiles": [
+    "computer-science/3. Графический редактор/index.md",
+    "computer-science/4. Редактор таблиц/index.md",
+    "computer-science/5. ИИ промпты/index.md",
+    "computer-science/6. Видеомонтаж/index.md",
+    "index 1.md",
+    "index.md",
+    "os-network/Cisco/index.md",
+    "os-network/4. End point/index.md",
+    "os-network/3. Security & optimization/index.md",
+    "os-network/2. OS & Linux/index.md",
     "os-network/1. OSI/index.md",
     "os-network/Cisco",
     "os-network/4. End point",
@@ -225,12 +235,6 @@
     "content/os-network/1. OSI/5. Сеансовый уровень.md",
     "content/os-network/1. OSI/7. Прикладной уровень.md",
     "content/os-network/1. OSI/3. Сетевой уровень.md",
-    "content/os-network/1. OSI/2. Канальный уровень.md",
-    "content/os-network/1. OSI/1. Физический уровень.md",
-    "content/os-network/1. OSI/index.md",
-    "content/os-network/2. OS & Linux/example lesson.md",
-    "content/os-network/2. OS & Linux/example lesson 1.md",
-    "content/computer-science/2. Редактор презентаций/index.md",
-    "content/computer-science/1. Текстовый редактор/index.md"
+    "content/os-network/1. OSI/2. Канальный уровень.md"
   ]
 }
