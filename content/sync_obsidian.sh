@@ -1,125 +1,168 @@
-#!/bin/bash
-set -euo pipefail
+#!/usr/bin/env bash
+set -eu
 
 # Переходим в корень репозитория
 cd "$(dirname "$0")"
 
-# Добавляем все изменения в индекс Git
+# Добавляем все изменения в индекс
 git add -A
 
-# Проверяем, есть ли изменения для коммита
+# Не создаём пустой коммит
 if git diff --cached --quiet; then
     echo "Нет изменений для синхронизации."
     exit 0
 fi
 
-# Получаем список изменённых файлов
-CHANGED_FILES=$(git diff --cached --name-only)
+# Получаем изменения с учётом переименований
+CHANGES=$(git diff --cached --name-status --find-renames)
 
-# Определяем предметы, в которых есть изменения.
-# Исключаем служебные файлы и content/src.
+# Извлекаем предметы, в которых есть изменения
 SUBJECTS=$(
-    printf '%s\n' "$CHANGED_FILES" |
-        awk -F/ '
-            /^content\/src\// { next }
-            /^content\/sync_obsidian\.sh$/ { next }
-            /^content\// {
-                if (NF >= 3) {
-                    print $2
-                } else {
-                    print "content"
-                }
-                next
+    printf '%s\n' "$CHANGES" |
+        awk -F '\t' '
+            {
+                path = ($1 ~ /^R/ ? $3 : $2)
+
+                if (path !~ /^content\//) next
+                if (path ~ /^content\/src\//) next
+                if (path == "content/sync_obsidian.sh") next
+
+                n = split(path, parts, "/")
+
+                if (n >= 3) print parts[2]
+                else print "content"
             }
         ' |
         sort -u
 )
 
-# Формируем заголовок из названий предметов
-if [[ -n "$SUBJECTS" ]]; then
-    MAIN_DIR=$(printf '%s\n' "$CHANGED_FILES" |
-        awk -F/ '
-            /^content\/src\// { next }
-            /^content\/sync_obsidian\.sh$/ { next }
-            /^content\// {
-                if (NF >= 3) print $2
-                else print "content"
-            }
-        ' |
-        sort |
-        uniq -c |
-        sort -k1,1nr -k2,2 |
-        head -n 1 |
-        awk '{$1=""; sub(/^ /, ""); print}')
-
-    SUBJECT_COUNT=$(printf '%s\n' "$SUBJECTS" | wc -l | tr -d ' ')
-
-    if [[ "$SUBJECT_COUNT" -eq 1 ]]; then
-        SUBJECT_TITLE="$SUBJECTS"
-    elif [[ "$SUBJECT_COUNT" -eq 2 ]]; then
-        SUBJECT_TITLE=$(printf '%s\n' "$SUBJECTS" | paste -sd ' ' - | sed 's/ / и /')
-    else
-        SUBJECT_TITLE=$(printf '%s\n' "$SUBJECTS" | head -n 3 | paste -sd ', ' -)
-        if [[ "$SUBJECT_COUNT" -gt 3 ]]; then
-            SUBJECT_TITLE="$SUBJECT_TITLE и ещё $((SUBJECT_COUNT - 3))"
-        fi
+# Собираем список предметов в массив
+SUBJECT_ARRAY=()
+while IFS= read -r subject; do
+    if [[ -n "$subject" ]]; then
+        SUBJECT_ARRAY+=("$subject")
     fi
+done <<< "$SUBJECTS"
+
+SUBJECT_COUNT=${#SUBJECT_ARRAY[@]}
+
+# Формируем заголовок из всех изменённых предметов
+if [[ "$SUBJECT_COUNT" -eq 0 ]]; then
+    SUBJECT_TITLE="quartz-system"
+elif [[ "$SUBJECT_COUNT" -eq 1 ]]; then
+    SUBJECT_TITLE="${SUBJECT_ARRAY[0]}"
+elif [[ "$SUBJECT_COUNT" -eq 2 ]]; then
+    SUBJECT_TITLE="${SUBJECT_ARRAY[0]} и ${SUBJECT_ARRAY[1]}"
 else
-    MAIN_DIR="quartz-system"
-    SUBJECT_TITLE="$MAIN_DIR"
+    SUBJECT_TITLE="${SUBJECT_ARRAY[0]}, ${SUBJECT_ARRAY[1]}, ${SUBJECT_ARRAY[2]}"
+    if [[ "$SUBJECT_COUNT" -gt 3 ]]; then
+        SUBJECT_TITLE="$SUBJECT_TITLE и ещё $((SUBJECT_COUNT - 3))"
+    fi
 fi
 
-# Текущие дата и время
+# Дата, время и день недели
 CURRENT_TIME=$(date "+%d.%m.%y %H:%M")
 
-# День недели на русском
 case "$(date "+%u")" in
     1) WEEKDAY="понедельник" ;;
     2) WEEKDAY="вторник" ;;
-    3) WEEKDAY="четверг" ;;
-    4) WEEKDAY="среда" ;;
+    3) WEEKDAY="среда" ;;
+    4) WEEKDAY="четверг" ;;
     5) WEEKDAY="пятница" ;;
     6) WEEKDAY="суббота" ;;
     7) WEEKDAY="воскресенье" ;;
 esac
 
-# Заголовок коммита
 COMMIT_MSG="Sync: $SUBJECT_TITLE $CURRENT_TIME $WEEKDAY"
 
-# Формируем подробное описание изменений
-DESCRIPTION="Изменения:"
+# Группируем изменения по директориям любой глубины
+DESCRIPTION=$(
+    printf '%s\n' "$CHANGES" |
+        awk -F '\t' '
+            function group_for(path, parts, n, i, result) {
+                n = split(path, parts, "/")
 
-ADDED=$(git diff --cached --name-status | awk '$1 == "A" {print $2}')
-MODIFIED=$(git diff --cached --name-status | awk '$1 == "M" {print $2}')
-DELETED=$(git diff --cached --name-status | awk '$1 == "D" {print $2}')
-RENAMED=$(git diff --cached --name-status | awk '$1 ~ /^R/ {print $2 " -> " $3}')
-if [[ -n "$ADDED" ]]; then
-    DESCRIPTION+=$'\n\nДобавлены:\n'
-    DESCRIPTION+=$(printf '%s\n' "$ADDED" | sed 's/^/- /')
-fi
+                if (parts[1] == "content") {
+                    if (n == 2) return "content (корень)"
 
-if [[ -n "$MODIFIED" ]]; then
-    DESCRIPTION+=$'\n\nИзменены:\n'
-    DESCRIPTION+=$(printf '%s\n' "$MODIFIED" | sed 's/^/- /')
-fi
+                    result = parts[2]
 
-if [[ -n "$DELETED" ]]; then
-    DESCRIPTION+=$'\n\nУдалены:\n'
-    DESCRIPTION+=$(printf '%s\n' "$DELETED" | sed 's/^/- /')
-fi
+                    for (i = 3; i < n; i++) {
+                        result = result "/" parts[i]
+                    }
 
-if [[ -n "$RENAMED" ]]; then
-    DESCRIPTION+=$'\n\nПереименованы:\n'
-    DESCRIPTION+=$(printf '%s\n' "$RENAMED" | sed 's/^/- /')
-fi
+                    return result
+                }
 
+                if (n == 1) return "служебные файлы"
+
+                result = parts[1]
+                for (i = 2; i < n; i++) {
+                    result = result "/" parts[i]
+                }
+
+                return result
+            }
+
+            {
+                status = $1
+                old_path = $2
+                path = ($1 ~ /^R/ ? $3 : $2)
+
+                if (status == "A") action = "Добавлен"
+                else if (status == "M") action = "Изменён"
+                else if (status == "D") action = "Удалён"
+                else if (status ~ /^R/) action = "Переименован"
+                else if (status ~ /^C/) action = "Скопирован"
+                else action = "Изменён"
+
+                group = group_for(path)
+
+                if (status ~ /^R/) {
+                    file = old_path " → " path
+                } else {
+                    file = path
+                }
+
+                print group "\t" action "\t" file
+            }
+        ' |
+        sort -t "$(printf '\t')" -k1,1 -k2,2 -k3,3 |
+        awk -F '\t' '
+            BEGIN {
+                print "Изменения по темам:"
+            }
+
+            $1 != previous_group {
+                previous_group = $1
+                print ""
+                print previous_group ":"
+            }
+
+            {
+                print "  - " $2 ": " $3
+            }
+        '
+)
+
+# Статистика по типам изменений
+ADDED=$(printf '%s\n' "$CHANGES" | awk -F '\t' '$1 == "A" {n++} END {print n+0}')
+MODIFIED=$(printf '%s\n' "$CHANGES" | awk -F '\t' '$1 == "M" {n++} END {print n+0}')
+DELETED=$(printf '%s\n' "$CHANGES" | awk -F '\t' '$1 == "D" {n++} END {print n+0}')
+RENAMED=$(printf '%s\n' "$CHANGES" | awk -F '\t' '$1 ~ /^R/ {n++} END {print n+0}')
+
+DESCRIPTION="$DESCRIPTION
+
+Итого: добавлено $ADDED, изменено $MODIFIED, удалено $DELETED, переименовано $RENAMED."
+
+# Показываем итог перед коммитом
 echo
 echo "Заголовок: $COMMIT_MSG"
 echo
 echo "$DESCRIPTION"
 echo
 
-# Создаём коммит и отправляем изменения в master
+# Создаём коммит и отправляем изменения
 git commit -m "$COMMIT_MSG" -m "$DESCRIPTION"
 git push origin master
 
