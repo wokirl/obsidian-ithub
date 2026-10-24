@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: ESCA7A
+  pageTitle: wokirl
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
   locale: ru-RU
-  baseUrl: esca7a.github.io/obsidian-ithub
+  baseUrl: wokirl.github.io/obsidian-ithub
   ignorePatterns:
     - private
     - templates
