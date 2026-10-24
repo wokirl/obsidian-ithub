@@ -1,4 +1,13 @@
-# Quartz v5
+# Хранилище obsidian itHub
+Это лишь общедоступное в сети место, где я слежу/пишу/обновляю учебные проекты для демонстрации:
+- лабораторные;
+- презентации;
+- заметки;
+- и другое;
+
+Это место так же может вскоре выступить как портфолио. С увеличением времени обучения будет увеличиваться интерес и сложность проектов.
+
+# За обработку представления был взят шлюз Quartz v5
 
 > “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
 
