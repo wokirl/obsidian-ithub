@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer-science/2. Редактор презентаций/index.md",
+                "file": "CN & OS/1. Introduction to CN/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "computer-science/2. Редактор презентаций/index.md",
+                "file": "CN & OS/1. Introduction to CN/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "computer-science/2. Редактор презентаций/index.md",
+                "file": "CN & OS/1. Introduction to CN/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "computer-science/2. Редактор презентаций/index.md",
+                "file": "CN & OS/1. Introduction to CN/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,28 +190,29 @@
   },
   "active": "058b5433a74b91c7",
   "lastOpenFiles": [
+    "CN & OS/1. Introduction to CN/labs/1.pdf",
+    "CN & OS/1. Introduction to CN/index.md",
+    "CN & OS/1. Introduction to CN/labs/1.pkt",
+    "CN & OS/1. Introduction to CN/labs/lu2334847u61q.tmp",
+    "1.pkt.md",
+    "CN & OS/1. Introduction to CN/labs",
+    "CN & OS/2. OSI & subnet",
+    "os-network/1. Introduction to CN/1. Физический уровень",
+    "computer-science/2. Редактор презентаций/index.md",
     "computer-science/3. Графический редактор/index.md",
     "computer-science/4. Редактор таблиц/index.md",
     "computer-science/5. ИИ промпты/index.md",
     "computer-science/6. Видеомонтаж/index.md",
     "index 1.md",
     "index.md",
-    "os-network/Cisco/index.md",
-    "os-network/4. End point/index.md",
-    "os-network/3. Security & optimization/index.md",
-    "os-network/2. OS & Linux/index.md",
-    "os-network/1. OSI/index.md",
-    "os-network/Cisco",
-    "os-network/4. End point",
-    "os-network/3. Security & optimization",
+    "CN & OS/Cisco/index.md",
+    "CN & OS/5. End point/index.md",
+    "CN & OS/4. Security & optimization/index.md",
+    "CN & OS/3. OS & Linux/index.md",
+    "CN & OS/Cisco",
+    "CN & OS/5. End point",
+    "CN & OS/4. Security & optimization",
     "computer-science/2. Редактор презентаций/1.pptx",
-    "computer-science/2. Редактор презентаций/index.md",
-    "computer-science/2. Редактор презентаций",
-    "computer-science/3. Графический редактор",
-    "computer-science/6. Видеомонтаж",
-    "computer-science/5. ИИ промпты",
-    "computer-science/4. Редактор таблиц",
-    "content/math/dasha-labs/lab3/duel_4.html",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/a.jpg",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/mid.jpg",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/b.jpg",
@@ -233,8 +234,6 @@
     "content/os-network/1. OSI/4. Транспортный уровень.md",
     "content/os-network/1. OSI/6. Представительский уровень.md",
     "content/os-network/1. OSI/5. Сеансовый уровень.md",
-    "content/os-network/1. OSI/7. Прикладной уровень.md",
-    "content/os-network/1. OSI/3. Сетевой уровень.md",
-    "content/os-network/1. OSI/2. Канальный уровень.md"
+    "content/os-network/1. OSI/7. Прикладной уровень.md"
   ]
 }
