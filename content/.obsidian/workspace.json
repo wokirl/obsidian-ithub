@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer-science/1. Текстовый редактор/index.md",
+                "file": "CN & OS/1. Introduction to CN/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "computer-science/1. Текстовый редактор/index.md",
+                "file": "CN & OS/1. Introduction to CN/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "computer-science/1. Текстовый редактор/index.md",
+                "file": "CN & OS/1. Introduction to CN/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "computer-science/1. Текстовый редактор/index.md",
+                "file": "CN & OS/1. Introduction to CN/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,20 +190,21 @@
   },
   "active": "058b5433a74b91c7",
   "lastOpenFiles": [
+    "CN & OS/1. Introduction to CN/labs/cn-os.task.1.2.pdf",
+    "CN & OS/1. Introduction to CN/labs/cn-os.task.1.1.pkt",
+    "CN & OS/1. Introduction to CN/labs/Lab1.pkt",
+    "CN & OS/1. Introduction to CN/labs/cn-os.task.1.1.pdf",
+    "CN & OS/1. Introduction to CN/labs/lu170764byvwv.tmp",
+    "CN & OS/1. Introduction to CN/labs/cn-os.1.1.docx",
+    "computer-science/2. Редактор презентаций/index.md",
+    "computer-science/1. Текстовый редактор/index.md",
+    "computer-science/2. Редактор презентаций/cs.2.1.pptx",
     "computer-science/1. Текстовый редактор/cs.1.1.pdf",
     "CN & OS/1. Introduction to CN/index.md",
     "CN & OS/1. Introduction to CN/labs/cn-os.1.1.pkt",
     "CN & OS/1. Introduction to CN/labs/cn-os.1.1.pdf",
     "CN & OS/1. Introduction to CN/labs/1.1.pdf",
-    "computer-science/1. Текстовый редактор/index.md",
-    "CN & OS/1. Introduction to CN/labs/1.1.pkt",
-    "CN & OS/1. Introduction to CN/labs/1.pkt",
-    "CN & OS/1. Introduction to CN/labs/lu2334847u61q.tmp",
     "1.pkt.md",
-    "CN & OS/1. Introduction to CN/labs",
-    "CN & OS/2. OSI & subnet",
-    "os-network/1. Introduction to CN/1. Физический уровень",
-    "computer-science/2. Редактор презентаций/index.md",
     "computer-science/3. Графический редактор/index.md",
     "computer-science/4. Редактор таблиц/index.md",
     "computer-science/5. ИИ промпты/index.md",
@@ -214,7 +215,6 @@
     "CN & OS/5. End point/index.md",
     "CN & OS/4. Security & optimization/index.md",
     "CN & OS/3. OS & Linux/index.md",
-    "CN & OS/Cisco",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/a.jpg",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/mid.jpg",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/b.jpg",
