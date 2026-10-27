@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "f2b1ec1f190a0515",
+        "id": "39018909eb0b82e1",
         "type": "tabs",
         "children": [
           {
-            "id": "058b5433a74b91c7",
+            "id": "5dbdd08e9cc6cbd0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CN & OS/1. Introduction to CN/index.md",
+                "file": "CN & OS/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CN & OS/1. Introduction to CN/index.md",
+                "file": "CN & OS/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CN & OS/1. Introduction to CN/index.md",
+                "file": "CN & OS/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CN & OS/1. Introduction to CN/index.md",
+                "file": "CN & OS/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -188,22 +188,28 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "058b5433a74b91c7",
+  "active": "5dbdd08e9cc6cbd0",
   "lastOpenFiles": [
-    "CN & OS/1. Introduction to CN/labs/cn-os.task.1.2.pdf",
-    "CN & OS/1. Introduction to CN/labs/cn-os.task.1.1.pkt",
-    "CN & OS/1. Introduction to CN/labs/Lab1.pkt",
-    "CN & OS/1. Introduction to CN/labs/cn-os.task.1.1.pdf",
-    "CN & OS/1. Introduction to CN/labs/lu170764byvwv.tmp",
-    "CN & OS/1. Introduction to CN/labs/cn-os.1.1.docx",
+    "CN & OS/2. OSI & subnet/lab/KT2_SSD9kh12_TankovPavelVitalievich.pdf",
+    "CN & OS/index.md",
+    "cn-os.task.2.pkt.md",
+    "CN & OS/2. OSI & subnet/lab/cn-os.task.2.docx",
+    "CN & OS/2. OSI & subnet/lab/lab2_TT.docx",
+    "CN & OS/2. OSI & subnet/lab/lab2_Subnetting_маршрутизация.docx",
+    "CN & OS/1. Introduction to CN/index.md",
+    "CN & OS/1. Introduction to CN/labs/cs-os.1.2.pdf",
+    "CN & OS/1. Introduction to CN/3. Сетевой уровень.md",
+    "CN & OS/1. Introduction to CN/2. Канальный уровень.md",
+    "CN & OS/1. Introduction to CN/1. Физический уровень.md",
+    "CN & OS/1. Introduction to CN/labs/cs-os.1.2.pkt",
+    "CN & OS/1. Introduction to CN/labs/КТ1_kh12_Tankov.pkt",
+    "CN & OS/1. Introduction to CN/labs/cs-os.1.2.docx",
+    "CN & OS/1. Introduction to CN/labs/tankov1_2.pdf",
+    "CN & OS/1. Introduction to CN/labs/tankov2.docx",
+    "2.pkt.md",
+    "CN & OS/2. OSI & subnet/index.md",
     "computer-science/2. Редактор презентаций/index.md",
     "computer-science/1. Текстовый редактор/index.md",
-    "computer-science/2. Редактор презентаций/cs.2.1.pptx",
-    "computer-science/1. Текстовый редактор/cs.1.1.pdf",
-    "CN & OS/1. Introduction to CN/index.md",
-    "CN & OS/1. Introduction to CN/labs/cn-os.1.1.pkt",
-    "CN & OS/1. Introduction to CN/labs/cn-os.1.1.pdf",
-    "CN & OS/1. Introduction to CN/labs/1.1.pdf",
     "1.pkt.md",
     "computer-science/3. Графический редактор/index.md",
     "computer-science/4. Редактор таблиц/index.md",
@@ -228,13 +234,6 @@
     "content/math/dasha-labs/5. СОЗДАНИЕ ШАБЛОНА САЙТА. ФИКСИРОВАННАЯ ВЁРСТКА..md",
     "content/math/dasha-labs/4. РАБОТА С МЕТА.md",
     "content/math/формулы сокращенного умножения.md",
-    "content/math/степени.md",
-    "content/math/корни.md",
-    "content/math/квадратные уравнения.md",
-    "content/index.md",
-    "content/kek.md",
-    "content/os-network/1. OSI/4. Транспортный уровень.md",
-    "content/os-network/1. OSI/6. Представительский уровень.md",
-    "content/os-network/1. OSI/5. Сеансовый уровень.md"
+    "content/math/степени.md"
   ]
 }
