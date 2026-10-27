@@ -7,6 +7,6 @@
 [Открыть PDF](cs-os.1.2.pdf)
 [Открыть PKT](cs-os.1.2.pkt)
 # 3. Лабораторная работа: Разделение сети на подсети и настройка маршрутизации
-[Тех. задание](cn-os.task.2.pkt)
-[Открыть PKT](2KT_SSD9Kkh12_Tankov-Pavel-Vitalieivch)
+[Тех. задание](cn-os.task.2.docx)
+[Открыть PKT](2KT_SSD9Kkh12_Tankov-Pavel-Vitalieivch.pkt)
 [Открыть PDF](KT2_SSD9kh12_TankovPavelVitalievich.pdf)
