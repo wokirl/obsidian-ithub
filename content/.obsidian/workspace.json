@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CN & OS/index.md",
+                "file": "CN & OS/1. Introduction to CN/Введение в CN.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Введение в CN"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CN & OS/index.md",
+                "file": "CN & OS/1. Introduction to CN/Введение в CN.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CN & OS/index.md",
+                "file": "CN & OS/1. Introduction to CN/Введение в CN.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CN & OS/index.md",
+                "file": "CN & OS/1. Introduction to CN/Введение в CN.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,8 +190,10 @@
   },
   "active": "5dbdd08e9cc6cbd0",
   "lastOpenFiles": [
-    "2KT_SSD9Kkh12_Tankov-Pavel-Vitalieivch.md",
+    "CN & OS/1. Introduction to CN/1. Физический уровень.md",
+    "CN & OS/1. Introduction to CN/Введение в CN.md",
     "CN & OS/index.md",
+    "2KT_SSD9Kkh12_Tankov-Pavel-Vitalieivch.md",
     "CN & OS/2. OSI & subnet/lab/KT2_SSD9kh12_TankovPavelVitalievich.pdf",
     "cn-os.task.2.pkt.md",
     "CN & OS/2. OSI & subnet/lab/cn-os.task.2.docx",
@@ -201,7 +203,6 @@
     "CN & OS/1. Introduction to CN/labs/cs-os.1.2.pdf",
     "CN & OS/1. Introduction to CN/3. Сетевой уровень.md",
     "CN & OS/1. Introduction to CN/2. Канальный уровень.md",
-    "CN & OS/1. Introduction to CN/1. Физический уровень.md",
     "CN & OS/1. Introduction to CN/labs/cs-os.1.2.pkt",
     "CN & OS/1. Introduction to CN/labs/КТ1_kh12_Tankov.pkt",
     "CN & OS/1. Introduction to CN/labs/cs-os.1.2.docx",
@@ -234,7 +235,6 @@
     "content/math/dasha-labs/lab3/src/img/maps/de_vertigo/mid.jpg",
     "content/math/dasha-labs/5. СОЗДАНИЕ ШАБЛОНА САЙТА. ФИКСИРОВАННАЯ ВЁРСТКА..md",
     "content/math/dasha-labs/4. РАБОТА С МЕТА.md",
-    "content/math/формулы сокращенного умножения.md",
-    "content/math/степени.md"
+    "content/math/формулы сокращенного умножения.md"
   ]
 }
