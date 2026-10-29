@@ -4,29 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f2b1ec1f190a0515",
+        "id": "1340651df654a1c2",
         "type": "tabs",
         "children": [
           {
-            "id": "058b5433a74b91c7",
+            "id": "c3eab66c65eaca03",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-<<<<<<< HEAD
-                "file": "CN & OS/1. Introduction to CN/6. Представительский уровень.md",
-=======
-                "file": "CN & OS/1. Introduction to CN/3. Сетевой уровень.md",
->>>>>>> 41ac21ceb40805442e14378e06508b35955511d3
+                "file": "CN & OS/1. Introduction to CN/0. Введение в CN.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-<<<<<<< HEAD
-              "title": "6. Представительский уровень"
-=======
-              "title": "3. Сетевой уровень"
->>>>>>> 41ac21ceb40805442e14378e06508b35955511d3
+              "title": "0. Введение в CN"
             }
           }
         ]
@@ -107,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CN & OS/1. Introduction to CN/index.md",
+                "file": "CN & OS/1. Introduction to CN/0. Введение в CN.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CN & OS/1. Introduction to CN/index.md",
+                "file": "CN & OS/1. Introduction to CN/0. Введение в CN.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -169,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CN & OS/1. Introduction to CN/index.md",
+                "file": "CN & OS/1. Introduction to CN/0. Введение в CN.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -196,8 +188,18 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "5dbdd08e9cc6cbd0",
+  "active": "c3eab66c65eaca03",
   "lastOpenFiles": [
+    "CN & OS/1. Introduction to CN/8. Верхние уровни модели OSI L5 L6 L7.md",
+    "CN & OS/1. Introduction to CN/5. Сеансовый уровень.md",
+    "CN & OS/1. Introduction to CN/6. Представительский уровень.md",
+    "CN & OS/1. Introduction to CN/7. Прикладной уровень.md",
+    "CN & OS/1. Introduction to CN/4. Транспортный уровень.md",
+    "Физический уровень (L1) модели OSI.md",
+    "Модель OSI.md",
+    "CN & OS/1. Introduction to CN/3. Сетевой уровень.md",
+    "UI&UX/index.md",
+    "UI&UX",
     "CN & OS/2. OSI & subnet/lab/KT2_SSD9kh12_TankovPavelVitalievich.pdf~RF16b17b8.TMP",
     "CN & OS/2. OSI & subnet/lab/lu198929m4f4.tmp",
     "CN & OS/2. OSI & subnet/lab/KT2_SSD9kh12_TankovPavelVitalievich.docx~RF16aecdf.TMP",
@@ -208,32 +210,15 @@
     "computer-science/2. Редактор презентаций/cs.2.5.pptx",
     "computer-science/2. Редактор презентаций/cs.2.5.odp",
     "computer-science/2. Редактор презентаций/cs.2.2.odp",
-    "computer-science/2. Редактор презентаций/cs.2.2.pptx",
-    "computer-science/2. Редактор презентаций/tayna_zacharovannogo_lesa.pptx",
     "CN & OS/1. Introduction to CN/1. Физический уровень.md",
     "CN & OS/index.md",
     "2KT_SSD9Kkh12_Tankov-Pavel-Vitalieivch.md",
     "cn-os.task.2.pkt.md",
     "CN & OS/1. Introduction to CN/index.md",
-    "CN & OS/1. Introduction to CN/3. Сетевой уровень.md",
     "CN & OS/1. Introduction to CN/2. Канальный уровень.md",
     "2.pkt.md",
     "CN & OS/2. OSI & subnet/index.md",
     "computer-science/2. Редактор презентаций/index.md",
-    "PM",
-    "UI&UX",
-    "CN & OS/1. Introduction to CN/index.md",
-    "computer-science/Без названия.md",
-    "CN & OS/index.md",
-    "CN & OS/2. OSI & subnet/lab/cn-os.task.2.docx",
-    "CN & OS/2. OSI & subnet/lab/KT2_SSD9kh12_TankovPavelVitalievich.pdf",
-    "CN & OS/2. OSI & subnet/lab/KT2_SSD9kh12_TankovPavelVitalievich.docx",
-    "CN & OS/2. OSI & subnet/lab/2KT_SSD9Kkh12_Tankov-Pavel-Vitalieivch.pkt",
-    "CN & OS/2. OSI & subnet/lab",
-    "CN & OS/2. OSI & subnet/index.md",
-    "CN & OS/2. OSI & subnet",
-    "CN & OS/1. Introduction to CN/labs/cs-os.1.2.pkt",
-    "CN & OS/1. Introduction to CN/labs/cs-os.1.2.docx",
     "computer-science/1. Текстовый редактор/index.md",
     "1.pkt.md",
     "computer-science/3. Графический редактор/index.md",
@@ -241,11 +226,6 @@
     "computer-science/5. ИИ промпты/index.md",
     "computer-science/6. Видеомонтаж/index.md",
     "index 1.md",
-    "index.md",
-    "CN & OS/Cisco/index.md",
-    "CN & OS/5. End point/index.md",
-    "CN & OS/4. Security & optimization/index.md",
-    "CN & OS/3. OS & Linux/index.md",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/a.jpg",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/mid.jpg",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/b.jpg",
@@ -255,8 +235,6 @@
     "content/math/dasha-labs/lab3/src/img/maps/de_ancient/mid.jpg",
     "content/math/dasha-labs/lab3/src/img/maps/de_ancient/b.jpg",
     "content/math/dasha-labs/lab3/src/img/maps/de_ancient/a.jpg",
-    "content/math/dasha-labs/lab3/src/img/maps/de_vertigo/mid.jpg",
-    "content/math/dasha-labs/5. СОЗДАНИЕ ШАБЛОНА САЙТА. ФИКСИРОВАННАЯ ВЁРСТКА..md",
-    "content/math/dasha-labs/4. РАБОТА С МЕТА.md"
+    "content/math/dasha-labs/lab3/src/img/maps/de_vertigo/mid.jpg"
   ]
 }
