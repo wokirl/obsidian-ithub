@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer-science/index.md",
+                "file": "UI & UX/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -191,9 +191,12 @@
   "active": "139341a393e57af1",
   "lastOpenFiles": [
     "project managing/index.md",
-    "UI & UX/index.md",
     "computer-science/index.md",
+    "CN & OS/index.md",
+    "CN & OS/4. Security & optimization/index.md",
+    "CN & OS/4. Security & optimization/controlFlow-hijacking.pptx",
     "CN & OS/1. Introduction to CN/index.md",
+    "UI & UX/index.md",
     "CN & OS/2. OSI & subnet/index.md",
     "CN & OS/2. OSI & subnet/labs/KT2_SSD9kh12_TankovPavelVitalievich.pdf",
     "project managing/pm.swot.pptx",
@@ -214,11 +217,8 @@
     "UI & UX/ui-ux.user-persona.pdf",
     "UI&UX/ropz_user_persona.jpeg",
     "UI&UX/ui-ux.user-presona.pdf",
-    "UI&UX/lu22132hank9.tmp",
     "UI&UX/ropz_user_presona.jpeg",
-    "CN & OS/index.md",
     "CN & OS/Cisco/index.md",
-    "CN & OS/4. Security & optimization/index.md",
     "CN & OS/5. End point/index.md",
     "CN & OS/3. OS & Linux/index.md",
     "computer-science/3. Графический редактор/index.md",
