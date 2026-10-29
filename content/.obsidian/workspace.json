@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CN & OS/1. Introduction to CN/OSI/5. Сеансовый уровень.md",
+                "file": "CN & OS/2. OSI & subnet/index.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "5. Сеансовый уровень"
+              "title": "index"
             }
           }
         ]
@@ -200,16 +200,19 @@
   },
   "active": "8e36e4ad851d47d9",
   "lastOpenFiles": [
-    "CN & OS/1. Introduction to CN/protocols/L5/RPC.md",
+    "CN & OS/1. Introduction to CN/index.md",
+    "CN & OS/1. Introduction to CN/protocols/index.md",
+    "CN & OS/1. Introduction to CN/OSI/index.md",
+    "CN & OS/1. Introduction to CN/OSI/8. Верхние уровни модели L5 L6 L7.md",
     "CN & OS/1. Introduction to CN/OSI/5. Сеансовый уровень.md",
+    "CN & OS/1. Introduction to CN/OSI/6. Представительский уровень.md",
+    "CN & OS/1. Introduction to CN/OSI/7. Прикладной уровень.md",
+    "CN & OS/1. Introduction to CN/OSI/4. Транспортный уровень.md",
+    "CN & OS/1. Introduction to CN/protocols/L5/RPC.md",
     "CN & OS/1. Introduction to CN/protocols/L5/PPTP & L2TP.md",
     "CN & OS/1. Introduction to CN/protocols/L5/NetBIOS & NetBEUI.md",
-    "CN & OS/1. Introduction to CN/OSI/7. Прикладной уровень.md",
     "CN & OS/1. Introduction to CN/OSI/2. Канальный уровень.md",
-    "CN & OS/1. Introduction to CN/OSI/8. Верхние уровни модели L5 L6 L7.md",
     "CN & OS/1. Introduction to CN/OSI/1. Физический уровень.md",
-    "CN & OS/1. Introduction to CN/OSI/6. Представительский уровень.md",
-    "CN & OS/1. Introduction to CN/OSI/4. Транспортный уровень.md",
     "CN & OS/1. Introduction to CN/OSI/3. Сетевой уровень.md",
     "CN & OS/1. Introduction to CN/protocols/L2/Ethernet.md",
     "CN & OS/1. Introduction to CN/OSI/0. Введение в CN.md",
@@ -223,9 +226,6 @@
     "CN & OS/1. Introduction to CN/protocols/L2/PPP & PPPoE.md",
     "CN & OS/1. Introduction to CN/protocols/L2/Wi-Fi (IEEE 802.11).md",
     "CN & OS/1. Introduction to CN/protocols/L2/VLAN (802.1Q).md",
-    "CN & OS/1. Introduction to CN/protocols/L3/ICMP & ICMPv6.md",
-    "CN & OS/1. Introduction to CN/protocols/L3/IPsec.md",
-    "CN & OS/1. Introduction to CN/protocols/L3/IPv4 & IPv6.md",
     "CN & OS/1. Introduction to CN/protocols/L7",
     "CN & OS/1. Introduction to CN/protocols/L6",
     "CN & OS/1. Introduction to CN/protocols/L5",
