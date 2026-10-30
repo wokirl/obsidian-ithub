@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CN & OS/Cisco/switch - защита порта по мак адресу.md",
+                "file": "computer-science/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "switch - защита порта по мак адресу"
+              "title": "index"
             }
           }
         ]
@@ -190,8 +190,9 @@
   },
   "active": "77f517e94ebd50c7",
   "lastOpenFiles": [
-    "CN & OS/Cisco/router - настройка dhcp и создание подсетей.md",
+    "computer-science/2. Редактор презентаций/index.md",
     "CN & OS/Cisco/switch - защита порта по мак адресу.md",
+    "CN & OS/Cisco/router - настройка dhcp и создание подсетей.md",
     "CN & OS/1. Introduction to CN/labs/cs-os.1.2.pdf",
     "CN & OS/index.md",
     "CN & OS/1. Introduction to CN/protocols/L1/GSM.md",
@@ -216,7 +217,6 @@
     "CN & OS/1. Introduction to CN/protocols/L4/UDP.md",
     "CN & OS/1. Introduction to CN/protocols/L1/5G.md",
     "CN & OS/1. Introduction to CN/protocols/L7/SMTP & IMAP & POP3.md",
-    "CN & OS/1. Introduction to CN/protocols/L1/6G.md",
     "CN & OS/1. Introduction to CN/protocols/L7",
     "CN & OS/1. Introduction to CN/protocols/L6",
     "CN & OS/1. Introduction to CN/protocols/L5",
