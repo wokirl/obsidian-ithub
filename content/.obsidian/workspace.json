@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer-science/index.md",
+                "file": "software engineer/Путь к Software Engineer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Путь к Software Engineer"
             }
           }
         ]
@@ -188,8 +188,14 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "77f517e94ebd50c7",
+  "active": "460e6f7b3a739da7",
   "lastOpenFiles": [
+    "computer-science/index.md",
+    "software engineer/Путь к Software Engineer.md",
+    "software engineer",
+    "computer-science/3. Графический редактор/epicagmaes.png",
+    "computer-science/3. Графический редактор/ubisoft.png",
+    "computer-science/3. Графический редактор/steam.jpg",
     "computer-science/2. Редактор презентаций/index.md",
     "CN & OS/Cisco/switch - защита порта по мак адресу.md",
     "CN & OS/Cisco/router - настройка dhcp и создание подсетей.md",
@@ -215,8 +221,6 @@
     "CN & OS/1. Introduction to CN/protocols/L2/Ethernet.md",
     "CN & OS/1. Introduction to CN/OSI/0. Введение в CN.md",
     "CN & OS/1. Introduction to CN/protocols/L4/UDP.md",
-    "CN & OS/1. Introduction to CN/protocols/L1/5G.md",
-    "CN & OS/1. Introduction to CN/protocols/L7/SMTP & IMAP & POP3.md",
     "CN & OS/1. Introduction to CN/protocols/L7",
     "CN & OS/1. Introduction to CN/protocols/L6",
     "CN & OS/1. Introduction to CN/protocols/L5",
@@ -226,15 +230,11 @@
     "CN & OS/1. Introduction to CN/protocols/L1",
     "CN & OS/1. Introduction to CN/protocols",
     "src/TCP-UDP.png",
-    "CN & OS/1. Introduction to CN/OSI",
     "UI&UX/ropz_user_persona.jpeg",
     "UI&UX/ropz_user_presona.jpeg",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/a.jpg",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/mid.jpg",
     "content/math/dasha-labs/lab3/src/img/maps/de_cache/b.jpg",
-    "content/math/dasha-labs/lab3/src/img/maps/de_anubis/mid.jpg",
-    "content/math/dasha-labs/lab3/src/img/maps/de_anubis/b.jpg",
-    "content/math/dasha-labs/lab3/src/img/maps/de_anubis/a.jpg",
-    "content/math/dasha-labs/lab3/src/img/maps/de_ancient/mid.jpg"
+    "content/math/dasha-labs/lab3/src/img/maps/de_anubis/mid.jpg"
   ]
 }
