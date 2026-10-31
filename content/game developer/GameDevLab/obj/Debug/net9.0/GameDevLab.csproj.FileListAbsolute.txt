@@ -1,0 +1,14 @@
+D:\obsidian-ithub\content\game developer\GameDevLab\bin\Debug\net9.0\GameDevLab.exe
+D:\obsidian-ithub\content\game developer\GameDevLab\bin\Debug\net9.0\GameDevLab.deps.json
+D:\obsidian-ithub\content\game developer\GameDevLab\bin\Debug\net9.0\GameDevLab.runtimeconfig.json
+D:\obsidian-ithub\content\game developer\GameDevLab\bin\Debug\net9.0\GameDevLab.dll
+D:\obsidian-ithub\content\game developer\GameDevLab\bin\Debug\net9.0\GameDevLab.pdb
+D:\obsidian-ithub\content\game developer\GameDevLab\obj\Debug\net9.0\GameDevLab.GeneratedMSBuildEditorConfig.editorconfig
+D:\obsidian-ithub\content\game developer\GameDevLab\obj\Debug\net9.0\GameDevLab.AssemblyInfoInputs.cache
+D:\obsidian-ithub\content\game developer\GameDevLab\obj\Debug\net9.0\GameDevLab.AssemblyInfo.cs
+D:\obsidian-ithub\content\game developer\GameDevLab\obj\Debug\net9.0\GameDevLab.csproj.CoreCompileInputs.cache
+D:\obsidian-ithub\content\game developer\GameDevLab\obj\Debug\net9.0\GameDevLab.dll
+D:\obsidian-ithub\content\game developer\GameDevLab\obj\Debug\net9.0\refint\GameDevLab.dll
+D:\obsidian-ithub\content\game developer\GameDevLab\obj\Debug\net9.0\GameDevLab.pdb
+D:\obsidian-ithub\content\game developer\GameDevLab\obj\Debug\net9.0\GameDevLab.genruntimeconfig.cache
+D:\obsidian-ithub\content\game developer\GameDevLab\obj\Debug\net9.0\ref\GameDevLab.dll

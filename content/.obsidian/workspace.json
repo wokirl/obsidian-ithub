@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "software engineer/Путь к Software Engineer.md",
+                "file": "game developer/1.4. Переменные, типы данных и система типов C-sharp.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Путь к Software Engineer"
+              "title": "1.4. Переменные, типы данных и система типов C-sharp"
             }
           }
         ]
@@ -188,18 +188,32 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "460e6f7b3a739da7",
+  "active": "77f517e94ebd50c7",
   "lastOpenFiles": [
-    "computer-science/index.md",
+    "game developer/1.4.1. Переменные и статическая типизация.md",
+    "game developer/1.4. Переменные, типы данных и система типов C-sharp.md",
+    "game developer/1.3. Создание и исследование реального проекта C-sharp.md",
+    "game developer/1.4 — Переменные, типы данных и система типов C-sharp",
+    "game developer/1.2. Структура проекта C-sharp и точка входа программы.md",
+    "game developer/GameDevLab/obj/Debug/net9.0/GameDevLab.AssemblyInfo.cs",
+    "game developer/GameDevLab/obj/Debug/net9.0/GameDevLab.csproj.FileListAbsolute.txt",
+    "game developer/GameDevLab/bin/Debug/net9.0/GameDevLab.pdb",
+    "game developer/GameDevLab/obj/Debug/net9.0/ref/GameDevLab.dll",
+    "game developer/GameDevLab/bin/Debug/net9.0/GameDevLab.dll",
+    "game developer/GameDevLab/bin/Debug/net9.0/GameDevLab.runtimeconfig.json",
+    "game developer/GameDevLab/obj/Debug/net9.0/GameDevLab.genruntimeconfig.cache",
+    "game developer/GameDevLab/bin/Debug/net9.0/GameDevLab.deps.json",
+    "game developer/GameDevLab/bin/Debug/net9.0/GameDevLab.exe",
+    "game developer/1.1. C-sharp и .NET - устройство платформы и выполнение программы.md",
+    "game developer/prompt.md",
     "software engineer/Путь к Software Engineer.md",
-    "software engineer",
+    "computer-science/index.md",
     "computer-science/3. Графический редактор/epicagmaes.png",
     "computer-science/3. Графический редактор/ubisoft.png",
     "computer-science/3. Графический редактор/steam.jpg",
     "computer-science/2. Редактор презентаций/index.md",
     "CN & OS/Cisco/switch - защита порта по мак адресу.md",
     "CN & OS/Cisco/router - настройка dhcp и создание подсетей.md",
-    "CN & OS/1. Introduction to CN/labs/cs-os.1.2.pdf",
     "CN & OS/index.md",
     "CN & OS/1. Introduction to CN/protocols/L1/GSM.md",
     "CN & OS/1. Introduction to CN/OSI/index.md",
@@ -215,20 +229,6 @@
     "CN & OS/1. Introduction to CN/protocols/L5/RPC.md",
     "CN & OS/1. Introduction to CN/protocols/L5/PPTP & L2TP.md",
     "CN & OS/1. Introduction to CN/protocols/L5/NetBIOS & NetBEUI.md",
-    "CN & OS/1. Introduction to CN/OSI/2. Канальный уровень.md",
-    "CN & OS/1. Introduction to CN/OSI/1. Физический уровень.md",
-    "CN & OS/1. Introduction to CN/OSI/3. Сетевой уровень.md",
-    "CN & OS/1. Introduction to CN/protocols/L2/Ethernet.md",
-    "CN & OS/1. Introduction to CN/OSI/0. Введение в CN.md",
-    "CN & OS/1. Introduction to CN/protocols/L4/UDP.md",
-    "CN & OS/1. Introduction to CN/protocols/L7",
-    "CN & OS/1. Introduction to CN/protocols/L6",
-    "CN & OS/1. Introduction to CN/protocols/L5",
-    "CN & OS/1. Introduction to CN/protocols/L4",
-    "CN & OS/1. Introduction to CN/protocols/L3",
-    "CN & OS/1. Introduction to CN/protocols/L2",
-    "CN & OS/1. Introduction to CN/protocols/L1",
-    "CN & OS/1. Introduction to CN/protocols",
     "src/TCP-UDP.png",
     "UI&UX/ropz_user_persona.jpeg",
     "UI&UX/ropz_user_presona.jpeg",
